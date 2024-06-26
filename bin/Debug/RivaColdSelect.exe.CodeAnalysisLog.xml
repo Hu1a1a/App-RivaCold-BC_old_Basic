@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files\microsoft visual studio\2022\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="17.0">
+ <Targets>
+  <Target Name="D:\Visual Studio\RivaColdSelect\bin\Debug\RivaColdSelect.exe">
+   <Modules>
+    <Module Name="rivacoldselect.exe">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Firme 'RivaColdSelect.exe' con una clave de nombre seguro.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Marque 'RivaColdSelect.exe' con CLSCompliant(true) porque expone tipos visibles externamente.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Warning">Puesto que el ensamblado 'RivaColdSelect.exe' contiene un archivo de recursos basado en ResX, márquelo con el atributo NeutralResourcesLanguage, especificando el lenguaje de los recursos del ensamblado. Esto puede mejorar el rendimiento de las búsquedas la primera vez que se recupera un recurso.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="RivaColdSelect">
+       <Types>
+        <Type Name="FormFT" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="2">Asegúrese de establecer la propiedad Locale DataTable donde 'FormFT.New()' cree una instancia de este tipo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BoxGama_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.ComboBox.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="132">El método 'FormFT.BoxGama_SelectedIndexChanged(Object, EventArgs)' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Modelo de Producto".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FTDatos(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.ListView+ColumnHeaderCollection.Add(System.String,System.Int32)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="43">El método 'FormFT.FTDatos(Object, EventArgs)' pasa una cadena literal como parámetro 'text' de una llamada a 'ListView.ColumnHeaderCollection.Add(String, Integer)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "AV/BV".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="45">El método 'FormFT.FTDatos(Object, EventArgs)' pasa una cadena literal como parámetro 'text' de una llamada a 'ListView.ColumnHeaderCollection.Add(String, Integer)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Tamb\Tc".</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="14">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFT.FTDatos(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="18">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFT.FTDatos(Object, EventArgs)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="22">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFT.FTDatos(Object, EventArgs)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="26">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFT.FTDatos(Object, EventArgs)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="30">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFT.FTDatos(Object, EventArgs)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.ButtonBase.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="67">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ButtonBase.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Return Back".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.ColumnHeader.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="58">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Datos".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="53">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Propiedad".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="90">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Tamb\Tc".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.ComboBox.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="122">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Gama de Producto".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="101">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Modelo de Producto".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="112">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Tipo de Equipo".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.Form.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.Designer.vb" Line="136">El método 'FormFT.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'Form.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Form1".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RivaColdTable" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Puesto que el campo 'FormFT.RivaColdTable' es visible fuera del tipo declarativo, cambie su accesibilidad a privada y agregue una propiedad, con la misma accesibilidad que tiene el campo actualmente, para proporcionar acceso a él.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SelectionTipo(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.ComboBox.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="116">El método 'FormFT.SelectionTipo(Object, EventArgs)' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Gama de Producto".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="115">El método 'FormFT.SelectionTipo(Object, EventArgs)' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Modelo de Producto".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TablaPF(System.Int32,System.String[],System.String[],System.Int32,System.String[],System.String[],System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Const" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'Const' en el nombre del parámetro 'ConstDV' cambiándolo a 'const'.</Issue>
+            </Message>
+            <Message Id="Count" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'Count' en el nombre del parámetro 'CountPC' cambiándolo a 'count'.</Issue>
+            </Message>
+            <Message Id="Reg" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'Reg' en el nombre del parámetro 'RegDC' cambiándolo a 'reg'.</Issue>
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'Reg' en el nombre del parámetro 'RegPC' cambiándolo a 'reg'.</Issue>
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'Reg' en el nombre del parámetro 'RegTDC' cambiándolo a 'reg'.</Issue>
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'Reg' en el nombre del parámetro 'RegTPC' cambiándolo a 'reg'.</Issue>
+            </Message>
+            <Message Id="TDC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'TDC' en el nombre del parámetro 'RegTDC' cambiándolo a 'Tdc'.</Issue>
+            </Message>
+            <Message Id="TPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'TPC' en el nombre del parámetro 'RegTPC' cambiándolo a 'Tpc'.</Issue>
+            </Message>
+            <Message Id="V" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el miembro 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', corrija el uso de mayúsculas y minúsculas en 'V' en el nombre del parámetro 'V' cambiándolo a 'v'.</Issue>
+            </Message>
+            <Message Id="V" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="53">En el método 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)', considere proporcionar un nombre más significativo que el nombre del parámetro 'V'.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="56">En el método 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)' visible externamente, valide el parámetro 'RegTPC' antes de usarlo.</Issue>
+            </Message>
+            <Message Id="2" TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="76">En el método 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)' visible externamente, valide el parámetro 'RegPC' antes de usarlo.</Issue>
+            </Message>
+            <Message Id="4" TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="78">En el método 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)' visible externamente, valide el parámetro 'RegTDC' antes de usarlo.</Issue>
+            </Message>
+            <Message Id="5" TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFT.vb" Line="79">En el método 'FormFT.TablaPF(Integer, String(), String(), Integer, String(), String(), String)' visible externamente, valide el parámetro 'RegDC' antes de usarlo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FormFunc1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BotonFicha_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="177">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BotonFicha_Click(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BoxEquivalencia_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="89">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxEquivalencia_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="91">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxEquivalencia_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="99">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxEquivalencia_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="102">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxEquivalencia_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="112">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxEquivalencia_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="99">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxEquivalencia_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="106">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxEquivalencia_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BoxModelo_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="59">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxModelo_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="62">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxModelo_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="73">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.BoxModelo_SelectedIndexChanged(Object, EventArgs)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Equivalencia(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="i" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="134">En el método 'FormFunc1.Equivalencia(Integer, Integer)', considere proporcionar un nombre más significativo que el nombre del parámetro 'i'.</Issue>
+            </Message>
+            <Message Id="n" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="134">En el método 'FormFunc1.Equivalencia(Integer, Integer)', considere proporcionar un nombre más significativo que el nombre del parámetro 'n'.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="142">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.Equivalencia(Integer, Integer)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="150">Puesto que el comportamiento de 'Integer.ToString()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.Equivalencia(Integer, Integer)' por una llamada a 'Integer.ToString(IFormatProvider)'. Si el resultado de 'Integer.ToString(IFormatProvider)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture()' como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="142">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.Equivalencia(Integer, Integer)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="144">Puesto que el comportamiento de 'String.StartsWith(String)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'FormFunc1.Equivalencia(Integer, Integer)' por una llamada a 'String.StartsWith(String, StringComparison)'. Si el resultado de 'String.StartsWith(String, StringComparison)' se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EquivIndex" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Puesto que el campo 'FormFunc1.EquivIndex' es visible fuera del tipo declarativo, cambie su accesibilidad a privada y agregue una propiedad, con la misma accesibilidad que tiene el campo actualmente, para proporcionar acceso a él.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExisteEquivalencia" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Puesto que el campo 'FormFunc1.ExisteEquivalencia' es visible fuera del tipo declarativo, cambie su accesibilidad a privada y agregue una propiedad, con la misma accesibilidad que tiene el campo actualmente, para proporcionar acceso a él.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.ButtonBase.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="297">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ButtonBase.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Ficha Técnica".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="306">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ButtonBase.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Return Back".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.ColumnHeader.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="241">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Diff".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="235">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "PF_Equiv".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="229">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "PF_Modelo".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="264">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Precio Equiv".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="259">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Precio Modelo".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="220">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "T_Amb".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="224">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ColumnHeader.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "T_Cámara".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.ComboBox.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="113">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Gama de Producto".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="79">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Modelo de Producto".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="124">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Tipo de Equipo".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.Form.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="324">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'Form.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Form2".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.GroupBox.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="279">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'GroupBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Comparación entre modelo".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="104">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'GroupBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Modelo Proveedor".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="136">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'GroupBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Modelo RivaCold".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="90">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'GroupBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Proveedor".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="162">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'GroupBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Rango de Comparación".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.TextBox.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="172">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'TextBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "%".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.Designer.vb" Line="182">El método 'FormFunc1.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'TextBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "%".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ListBox1_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.ComboBox.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="13">El método 'FormFunc1.ListBox1_SelectedIndexChanged(Object, EventArgs)' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Gama de Producto".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc1.vb" Line="7">El método 'FormFunc1.ListBox1_SelectedIndexChanged(Object, EventArgs)' pasa una cadena literal como parámetro 'value' de una llamada a 'ComboBox.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Seleccionar Modelo de Producto".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ModeloIndex" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Puesto que el campo 'FormFunc1.ModeloIndex' es visible fuera del tipo declarativo, cambie su accesibilidad a privada y agregue una propiedad, con la misma accesibilidad que tiene el campo actualmente, para proporcionar acceso a él.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FormFunc2" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Form.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc2.Designer.vb" Line="28">El método 'FormFunc2.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'Form.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Form1".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FormFunc3" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Form.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="FormFunc3.Designer.vb" Line="28">El método 'FormFunc3.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'Form.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Form1".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Main" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#.cctor()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="D:\Visual Studio\RivaColdSelect" File="Main.vb" Line="34">Asegúrese de establecer la propiedad Locale DataTable donde 'Main.New()' cree una instancia de este tipo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IntarConEqSC" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">Parece que el campo 'Main.IntarConEqSC' no se usa nunca o sólo se asigna alguna vez. Utilice este campo o quítelo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OleCommand" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">Parece que el campo 'Main.OleCommand' no se usa nunca o sólo se asigna alguna vez. Utilice este campo o quítelo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MainForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.ButtonBase.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="MainForm.Designer.vb" Line="39">El método 'MainForm.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ButtonBase.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Consultar Equivalencia Modelo".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="MainForm.Designer.vb" Line="49">El método 'MainForm.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'ButtonBase.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "Consultar Ficha Técnica".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.Form.set_Text(System.String)" TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2022-07-27 11:54:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="D:\Visual Studio\RivaColdSelect\Form" File="MainForm.Designer.vb" Line="72">El método 'MainForm.InitializeComponent()' pasa una cadena literal como parámetro 'value' de una llamada a 'Form.Text.Set(String)'. En su lugar, recupere las siguientes cadenas de una tabla de recursos: "RivaCold - BC Systems - Select".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Los ensamblados deben tener nombres seguros válidos</Name>
+   <Description>Puede que el ensamblado no tenga un nombre seguro, que no sea válido o que éste sea válido únicamente por la configuración del equipo. No se puede implementar el ensamblado en este estado. Las causas más probables son: 1) El contenido del ensamblado se modificó después de firmarlo. 2) Error en el proceso de firma. 3) El ensamblado tenía firma retardada. 4) Existía una clave del Registro que permitió que se realizara la comprobación (de lo contrario no se hubiera realizado).</Description>
+   <Resolution Name="NoStrongName">Firme {0} con una clave de nombre seguro.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Evitar los campos privados sin utilizar</Name>
+   <Description>Se detectaron campos privados a los que no parece que se obtenga acceso en el ensamblado. Si esta infracción da lugar a un error, envíe un informe sobre el problema al equipo de Code Analysis de Visual Studio.</Description>
+   <Resolution Name="Default">Parece que el campo {0} no se usa nunca o sólo se asigna alguna vez. Utilice este campo o quítelo.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+   <Name>No declarar campos de instancia visibles</Name>
+   <Description>Los campos de instancia que son visibles fuera del tipo que los declara, limitan la capacidad de cambiar los detalles de la implementación de esos elementos de datos. Use propiedades en su lugar. No comprometen el uso o el rendimiento, y proporcionan flexibilidad porque ocultan los detalles de la implementación de los datos subyacentes.</Description>
+   <Resolution Name="Default">Puesto que el campo {0} es visible fuera del tipo declarativo, cambie su accesibilidad a privada y agregue una propiedad, con la misma accesibilidad que tiene el campo actualmente, para proporcionar acceso a él.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182141.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Los identificadores deberían utilizar las mayúsculas y minúsculas correctamente</Name>
+   <Description>Los identificadores de tipo, espacio de nombres y miembro usan las mayúsculas y minúsculas como en Pascal. Los identificadores de parámetro usan las mayúsculas y minúsculas como en Camel. Los acrónimos de dos letras en estos identificadores deben ir en mayúsculas; por ejemplo, use System.IO en lugar de System.Io. Los acrónimos de tres o más letras deben usar las mayúsculas y minúsculas como en Pascal; por ejemplo, use System.Xml en lugar de System.XML. La convención de mayúsculas y minúsculas Pascal pone en mayúscula la primera letra de cada palabra, como en BackColor. La convención de mayúsculas y minúsculas Camel pone en minúscula la primera letra de la primera palabra y, en mayúscula, la primera letra de las palabras siguientes, como en backgroundColor. Si bien puede ser una práctica común para algunos acrónimos de dos letras no ponerlos totalmente en mayúsculas, no se deben excluir las infracciones de esta regla por esta razón. Por ejemplo, 'DbConnection', es común pero incorrecto; use DBConnection. Una infracción de esta regla puede ser necesaria por compatibilidad con esquemas de símbolos no administrados existentes. En general, sin embargo, estos símbolos no deberían estar visibles fuera del ensamblado que los usa.</Description>
+   <Resolution Name="MemberParameter">En el miembro {0}, corrija el uso de mayúsculas y minúsculas en '{1}' en el nombre del parámetro {2} cambiándolo a '{3}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Los identificadores deberían tener la ortografía correcta</Name>
+   <Description>Las palabras individuales que componen un identificador no se deberían abreviar y deberían tener la ortografía correcta. Si esta regla genera un falso positivo en un término que se debería reconocer, agregue la palabra al diccionario personalizado FxCop.</Description>
+   <Resolution Name="MemberParameterMoreMeaningfulName">En el método {0}, considere proporcionar un nombre más significativo que el nombre del parámetro {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Marque los ensamblados con CLSCompliantAttribute</Name>
+   <Description>Los ensamblados deben establecer explícitamente ser conformes a CLS usando el atributo CLSCompliant. Un ensamblado sin este atributo no es conforme a CLS. Los ensamblados, módulos y tipos pueden ser conformes a CLS incluso si alguna parte del ensamblado, módulo o tipo no son conformes a CLS. Se aplican las siguientes reglas: 1) Si el elemento está marcado como CLSCompliant, cualquier miembro no compatible debe tener el atributo CLSCompliant presente con el argumento establecido como false. 2) Se debe proporcionar un miembro alternativo conforme a CLS comparable con cada miembro que no sea conforme a CLS.</Description>
+   <Resolution Name="Default">Marque {0} con CLSCompliant(true) porque expone tipos visibles externamente.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+   <Name>Marque los ensamblados con NeutralResourcesLanguageAttribute</Name>
+   <Description>El atributo NeutralResourcesLanguage informa a ResourceManager del lenguaje usado para presentar los recursos de referencia cultural neutra para un ensamblado. Cuando se buscan recursos en la misma referencia cultural que el lenguaje de recursos neutro, ResourceManager usa automáticamente los recursos del ensamblado principal, en lugar de buscar un ensamblado satélite con la cultura de la interfaz de usuario actual para el subproceso actual. Esto mejorará el rendimiento de las búsquedas del primer recurso que cargue y puede reducir el espacio de trabajo.</Description>
+   <Resolution Name="Default">Puesto que el ensamblado {0} contiene un archivo de recursos basado en ResX, márquelo con el atributo NeutralResourcesLanguage, especificando el lenguaje de los recursos del ensamblado. Esto puede mejorar el rendimiento de las búsquedas la primera vez que se recupera un recurso.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb385967.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="No pasar cadenas literal como parámetros localizados" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>No pasar cadenas literal como parámetros localizados</Name>
+   <Description>Las cadenas de tipo literal incrustadas en el código fuente son difíciles de localizar. Evite pasar cadenas literal como argumentos en circunstancias donde, por lo general, se espera una cadena localizada.</Description>
+   <Resolution Name="KnownValue">El método {0} pasa una cadena literal como parámetro '{1}' de una llamada a {2}. En su lugar, recupere las siguientes cadenas de una tabla de recursos: {3}.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306">
+   <Name>Establecer configuración regional para tipos de datos</Name>
+   <Description>En la mayoría de casos, la configuración regional debe establecerse explícitamente como CultureInfo.InvariantCulture en las instancias de DataSet y DataTable. Una vez creada la instancia DataSet o DataTable, se establece la configuración regional en la referencia cultural actual. En la mayoría de casos, la configuración regional debe establecerse como CultureInfo.InvariantCulture para garantizar un comportamiento de ordenación adecuado en todas las referencias culturales.</Description>
+   <Resolution Name="Default">Asegúrese de establecer la propiedad Locale {0} donde {1} cree una instancia de este tipo.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182188.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Especificar IFormatProvider</Name>
+   <Description>Si existe una sobrecarga que toma un argumento IFormatProvider, se debe llamar siempre en favor de una sobrecarga que no lo haga. Algunos métodos del runtime convierten un valor a o desde una representación de cadena y toman un parámetro de cadena que contiene uno o varios caracteres, denominados especificadores de formato, que indican cómo se debe convertir el valor. Si el significado del especificador de formato varía por referencia cultural, un objeto de formato proporciona los caracteres usados en la representación de cadena. En escenarios donde el comportamiento de ordenación y comparación no debería cambiar nunca entre referecias culturales, especifique CultureInfo.InvariantCulture; de lo contrario, especifique CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternateString">Puesto que el comportamiento de {0} podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en {1} por una llamada a {2}. Si el resultado de {2} se mostrará al usuario, especifique {3} como parámetro 'IFormatProvider'. De lo contrario, si el resultado se almacenará y será el software quien tenga acceso a él, como cuando se almacena en un disco o en una base de datos, especifique {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+   <Name>Especificar StringComparison</Name>
+   <Description>Si sale una sobrecarga que toma un argumento StringComparison, se debería llamar a ésta en favor de una sobrecarga que no lo haga.</Description>
+   <Resolution Name="Default">Puesto que el comportamiento de {0} podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en {1} por una llamada a {2}. Si el resultado de {2} se mostrará al usuario, como cuando se ordena una lista de elementos para mostrarlos en un cuadro de lista, especifique 'StringComparison.CurrentCulture' o 'StringComparison.CurrentCultureIgnoreCase' como parámetro 'StringComparison'. Si se comparan identificadores que no distinguen mayúsculas y minúsculas, como rutas de acceso de archivo, variables de entorno o claves y valores del Registro, especifique 'StringComparison.OrdinalIgnoreCase'. De lo contrario, si se están comparando identificadores que sí distinguen mayúsculas y minúsculas, especifique 'StringComparison.Ordinal'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386080.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="17.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validar argumentos de métodos públicos</Name>
+   <Description>Todos los argumentos de referencia pasados a métodos visibles externamente deben comprobarse para ver si son NULL (Nothing en VB). Si procede, produzca una excepción System.ArgumentNullException cuando el argumento sea NULL.</Description>
+   <Resolution Name="Default">En el método {0} visible externamente, valide el parámetro '{1}' antes de usarlo.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="17.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de Code Analysis</String>
+ </Localized>
+</FxCopReport>

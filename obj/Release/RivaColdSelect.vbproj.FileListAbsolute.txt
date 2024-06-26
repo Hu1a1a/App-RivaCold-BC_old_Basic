@@ -1,0 +1,16 @@
+D:\Visual Studio\RivaColdSelect\bin\Release\RivaColdSelect.exe.config
+D:\Visual Studio\RivaColdSelect\bin\Release\RivaColdSelect.exe
+D:\Visual Studio\RivaColdSelect\bin\Release\RivaColdSelect.pdb
+D:\Visual Studio\RivaColdSelect\bin\Release\RivaColdSelect.xml
+D:\Visual Studio\RivaColdSelect\bin\Release\System.Data.OleDb.dll
+D:\Visual Studio\RivaColdSelect\bin\Release\System.Data.OleDb.xml
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.vbproj.AssemblyReference.cache
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.vbproj.SuggestedBindingRedirects.cache
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.MainForm.resources
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.Resources.resources
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.vbproj.GenerateResource.cache
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.vbproj.CoreCompileInputs.cache
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.vbproj.CopyComplete
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.exe
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.xml
+D:\Visual Studio\RivaColdSelect\obj\Release\RivaColdSelect.pdb

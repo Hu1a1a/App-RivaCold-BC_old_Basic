@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RivaColdSelect", "RivaColdSelect.vbproj", "{A564C570-62D7-4822-A53F-46C15D55C0AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A564C570-62D7-4822-A53F-46C15D55C0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A564C570-62D7-4822-A53F-46C15D55C0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A564C570-62D7-4822-A53F-46C15D55C0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A564C570-62D7-4822-A53F-46C15D55C0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40FCA447-BBFF-40E1-A402-9D9109F6110B}
+	EndGlobalSection
+EndGlobal
